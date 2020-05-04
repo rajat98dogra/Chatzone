@@ -66,15 +66,16 @@ join_room('Game')
             }
         })
         function show(data){
-        console.log("in show")
+//        console.log("in show")
         if(data.msg)
     {
         if(data.username==username)
-        { console.log(data.username)
+        {
+//         console.log(data.username)
 
             let side='right'
             chatbox(side,data)
-            console.log(data)
+//            console.log(data)
             }
             else{
             let side='left'
@@ -86,7 +87,7 @@ join_room('Game')
         }
 
         function chatbox(side,data){
-            console.log("in chatbox")
+//            console.log("in chatbox")
             const div=document.createElement('div')
             var ele=document.querySelector(`.msg ${side}-msg`)
             div.innerHTML=`
