@@ -1,0 +1,24 @@
+{%block head%}
+<link rel="stylesheet" href="static/home.css">
+{%endblock%}
+{%block body%}
+<div class="title">Welcome To ChatZone</div>
+
+<div class="nam">{{user}}</div>
+
+<div class="nav">
+<a href="{{url_for('chat')}}">Log In</a>
+<a href="{{url_for('logout')}}">Log Out</a>
+</div>
+<div class="detail">
+    <p>
+        This project is based on scoketIo, I am using javascript on client side
+        and Python for sever side. Database "postgresql" is used for the storage
+        and SQLALCHEMY libaray for the queries.
+
+
+    </p>
+
+</div>
+<footer>This project is only for learning purpose.</footer>
+{%endblock%}

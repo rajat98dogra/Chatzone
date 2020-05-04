@@ -1,0 +1,43 @@
+body{
+background-image:linear-gradient(to right,#181819,#76b852);
+}
+.title{
+font-size:2em;
+text-align:center;
+color:white;
+}
+.nav{
+display:flex;
+justify-content:space-between;
+}
+.nav a{
+font-size:2em;
+color:white;
+text-decoration:none;
+}
+.nav a:hover{
+padding:0em 1em;
+background-color:white;
+color:#76b852;
+transition:1s;
+}
+
+.nam{
+color:white;
+font-size:3em;
+text-align:center;
+text-transform:capitalize;
+}
+
+.detail,footer{
+color:white;
+font-size:2em;
+text-align:center;
+text-transform:capitalize;
+margin-top:3em;
+}
+
+footer{
+background-image:linear-gradient(to right,#119941,#76b652);
+font-size:1em;
+}
