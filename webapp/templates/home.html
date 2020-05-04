@@ -1,3 +1,4 @@
+{%extends 'base.html' %}
 {%block head%}
 <link rel="stylesheet" href="static/home.css">
 {%endblock%}
@@ -7,7 +8,7 @@
 <div class="nam">{{user}}</div>
 
 <div class="nav">
-<a href="{{url_for('chat')}}">Log In</a>
+<a href="{{url_for('chat')}}">Start Chating</a>
 <a href="{{url_for('logout')}}">Log Out</a>
 </div>
 <div class="detail">

@@ -66,8 +66,7 @@ def signin():
 @app.route("/home")
 @login_required
 def home():
-    posts="pppppppp"
-    print('\n\n',current_user.username)
+    # print('\n\n',current_user.username)
     return render_template('home.html' ,user=current_user.username)
 
 @app.route("/logout")
@@ -85,7 +84,6 @@ def chat():
         return render_template('chat.html',user=user,room=ROOMS)
     return redirect('login')
 
-incre=0
 Main=[]
 Game=[]
 Rest=[]
@@ -141,7 +139,6 @@ def message(data):
     # print(f'\n\n{data["room"]}')
 
     param ={'msg':data['msg'],'username':data['username'],'room':data['room'],"time":time_stamp}
-    # print(param)
     emit('announce',param, room=data['room'])
 
 
