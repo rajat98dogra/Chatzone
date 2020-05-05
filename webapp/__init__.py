@@ -5,7 +5,7 @@ from flask_login import LoginManager
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] ='postgresql://postgres:root@localhost/chat'#os.environ.get('DATABASE_URL')
     # 'postgresql://postgres:root@localhost/chat'
 app.secret_key= os.environ.get('SECRET_KEY')
 

@@ -92,11 +92,11 @@ loaded=[]
 
 def adding(data,time,room):
     print('adding',time)
-    if len(Post.query.filter_by(room=room).all())>100:
-        print("deleting####")
-        Post.query.filter_by(id=1).delete()
-        # print(val)
-        db.session.commit()
+    # if len(Post.query.filter_by(room=room).all())>100:
+    #     print("deleting####")
+    #     Post.query.filter_by(id=1).delete()
+    #     # print(val)
+    #     db.session.commit()
     val = Post(date_posted=time,content=str(data),room=room)
     # print(">>>>>",val)
     db.session.add(val)
@@ -112,15 +112,13 @@ def fetch(room):
         loaded.append(uobj)
 
         for i in uobj:
-            # print((i))
+            print((i))
             date=(str(i).split('content')[0])[5:19]
-            print(date)
-            mes=(((str(i).split('content')[1]).split(',')[0]).split(':')[1])[2:-1]
-            user=((str(i).split('content')[1]).split(',')[1].split(':')[1])[2:-1]
-            room=((str(i).split('content')[1]).split(',')[2].split(':')[1])[2:-2]
-            # print(mes)
-            da={"msg":mes,"username":user,"room":room,"time":date}
-            print(date)
+            # print(date)
+            info=(str(i).split('content')[1])
+            da=(eval(info))
+            da['time']=date
+            print(da)
             if len(eval(f'{room}')) >100:
                 print(len(eval(f'{room}')))
                 eval(f'{room}').pop(0)
