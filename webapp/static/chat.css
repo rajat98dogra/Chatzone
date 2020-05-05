@@ -178,3 +178,7 @@
    display:inline;
 
   }
+  .msg-text{
+
+  overflow-wrap:break-word;
+  }

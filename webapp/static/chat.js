@@ -7,6 +7,7 @@ join_room('Game')
 
         document.querySelector('.msger-send-btn').onclick=()=>{
         var mes=document.querySelector('#input').value
+        document.querySelector('#input').innerHTML=''
         var today=new Date()
         var date="Month "+today.getMonth()+" Day"+today.getDate()+" "+today.getHours()+":"+today.getMinutes()
         msg={'msg':mes,'username':username,'room':room,"date":date}
