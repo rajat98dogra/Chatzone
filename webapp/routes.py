@@ -129,7 +129,7 @@ def fetch(room):
 @socketio.on('input')
 def message(data):
     # print(f'\n\n{data}\n\n')
-    time_stamp = time.strftime('%b-%d %I:%M%p', time.localtime())
+    time_stamp = data['date']
     if data['msg']:
         print("done")
         adding(data,time_stamp,data['room'])

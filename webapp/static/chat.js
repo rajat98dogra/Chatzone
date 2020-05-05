@@ -7,7 +7,9 @@ join_room('Game')
 
         document.querySelector('.msger-send-btn').onclick=()=>{
         var mes=document.querySelector('#input').value
-        msg={'msg':mes,'username':username,'room':room}
+        var today=new Date()
+        var date="Month "+today.getMonth()+" Day"+today.getDate()+" "+today.getHours()+":"+today.getMinutes()
+        msg={'msg':mes,'username':username,'room':room,"date":date}
         socket.emit('input',msg)
 //        console.log('jssss')
     }
