@@ -92,11 +92,12 @@ loaded=[]
 
 def adding(data,time,room):
     print('adding',time)
-    # if len(Post.query.filter_by(room=room).all())>100:
-    #     print("deleting####")
-    #     Post.query.filter_by(id=1).delete()
-    #     # print(val)
-    #     db.session.commit()
+    if len(Post.query.filter_by(room=room).all())>100:
+        print("\ndeleting####\n",len(Post.query.filter_by(room=room).all()))
+        val=Post.query.filter_by(room=room).first()
+        print(val)
+        db.session.delete(val)
+        db.session.commit()
     val = Post(date_posted=time,content=str(data),room=room)
     # print(">>>>>",val)
     db.session.add(val)
@@ -120,7 +121,7 @@ def fetch(room):
             da['time']=date
             print(da)
             if len(eval(f'{room}')) >100:
-                print(len(eval(f'{room}')))
+                print("\n\n",len(eval(f'{room}')))
                 eval(f'{room}').pop(0)
             eval(f'{room}').append(da)
 
